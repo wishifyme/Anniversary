@@ -143,6 +143,7 @@
       border-radius: 16px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
       transition: transform 0.4s ease;
+      cursor: pointer;
     }
     .reel img:hover {
       transform: scale(1.05);
@@ -275,14 +276,12 @@
 
   <section id="photos">
     <h2>Photo Reel</h2>
-        
     <div class="reel">
-      <div class="photo" style="background-image:url('photo 1.webp');"></div>
-        <div class="photo" style="background-image:url('photo 2.webp');"></div>
-        <div class="photo" style="background-image:url('photo 3.webp');"></div>
-        <div class="photo" style="background-image:url('photo 4.webp');"></div>
-        <div class="photo" style="background-image:url('photo 5.webp');"></div>
-     
+      <img src="photo1.webp" alt="Photo 1" />
+      <img src="photo2.webp" alt="Photo 2" />
+      <img src="photo3.webp" alt="Photo 3" />
+      <img src="photo4.webp" alt="Photo 4" />
+      <img src="photo5.webp" alt="Photo 5" />
     </div>
   </section>
 
@@ -314,7 +313,7 @@
   <div id="video-popup-overlay" aria-hidden="true">
     <div id="video-popup">
       <video controls>
-        <source src="Video.mp4" type="video/mp4" />
+        <source src="video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <button id="close-video">Close</button>
@@ -357,19 +356,16 @@
       }
     });
 
-     // Special video popup logic
+    // Special video popup logic
     const openVideoBtn = document.getElementById('open-video-btn');
     const videoOverlay = document.getElementById('video-popup-overlay');
     const closeVideoBtn = document.getElementById('close-video');
-    const mainContent = document.getElementById('main-content');
-
+    
     openVideoBtn.addEventListener('click', () => {
       videoOverlay.style.display = 'flex';
-      mainContent.classList.add('popup-blur');
     });
     closeVideoBtn.addEventListener('click', () => {
       videoOverlay.style.display = 'none';
-      mainContent.classList.remove('popup-blur');
       const video = videoOverlay.querySelector('video');
       video.pause();
       video.currentTime = 0;
@@ -394,6 +390,3 @@
   </script>
 </body>
 </html>
-
-
-
